@@ -69,10 +69,11 @@ Whats wrong with writing this: The mean height of star wars characters is 174.38
 These values are manually typed out and cannot reflect change if the data gets changed
 
 Instead, we should type it out like this:
-The mean height of star wars characters is `r mean_height` cm with a standard deviation of 34.8 cm.
+The mean height of star wars characters is `r mean_height` cm with a standard deviation of `r sd_height` cm.
 
 You use backticks to tell it to get the mean directly from the code
 
+you can also write code in here that will be executed and rendered.
 
 
 
