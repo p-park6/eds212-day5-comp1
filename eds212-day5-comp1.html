@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details>
 <summary>show me the code!</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make a scatterplot of height vs weight</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>height_weight_scatterplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> starwars, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> mass)) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>height_weight_scatterplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> starwars, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> mass, <span class="at">color =</span> <span class="st">"pink"</span>)) <span class="sc">+</span> </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Height"</span>, </span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Weight"</span>, </span>
@@ -165,6 +165,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="eds212-day5-comp1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+<section id="calculate-summary-statistics" class="level1">
+<h1>Calculate summary statistics</h1>
+<section id="use-mean-function-to-find-means." class="level2">
+<h2 class="anchored" data-anchor-id="use-mean-function-to-find-means.">Use mean() function to find means.</h2>
+</section>
+<section id="use-sd-function-to-find-standard-deviations" class="level2">
+<h2 class="anchored" data-anchor-id="use-sd-function-to-find-standard-deviations">Use sd() function to find standard deviations</h2>
+<div class="cell">
+<details>
+<summary>show me the code!</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mean_height_test <span class="ot">&lt;-</span> <span class="fu">mean</span>(starwars)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#this does not work since there are a bunch of categories it can pull from</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mean_height <span class="ot">&lt;-</span> <span class="fu">mean</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#this will show me the mean of the characters heights in starwars</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#na.rm keeps or removes the non exsisting values. true will remove, false will keep</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>mean_height</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 174.358</code></pre>
+</div>
+</div>
+</section>
+<section id="find-and-store-the-standard-deviation-of-character-heights" class="level2">
+<h2 class="anchored" data-anchor-id="find-and-store-the-standard-deviation-of-character-heights">Find and store the standard deviation of character heights</h2>
+<div class="cell">
+<details>
+<summary>show me the code!</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sd_height <span class="ot">&lt;-</span> <span class="fu">sd</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sd_height</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 34.77043</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="in-line-reporting-using-code-outputs" class="level1">
+<h1>In-line reporting using code outputs</h1>
+<p>whats wrong with writing this: The mean height of star wars characters is 174.38 cm with a standard deviation of 34.8 cm.</p>
+<p>these values are manually typed out and cannot reflect change if the data gets changed</p>
+<p>instead, we should type it out like this: The mean height of star wars characters is 174.3580247 cm with a standard deviation of 34.8 cm.</p>
+<p>you use backticks to tell it to get the mean directly from the code</p>
 </section>
 
 </main>
