@@ -1,7 +1,56 @@
 ---
 title: "eds212-day5-comp1"
-format: html
+format: 
+  html: 
+    code-fold: true
+    code-summary: "show me the code!"
+#controls the visualization of how the document is shown
 editor: visual
+execute: 
+  echo: true
+  #echo controls whether the code shows up. false hides the code, true shows the code
+  warning: false
+  #warning controls the messages, false hides the messages, true shows the messages
 ---
 
-## changes
+```{r}
+library(tidyverse)
+```
+
+# Explore starwars dataset
+-   look at the first 6 lines of starwars
+-   find the dimensions of starwars
+-   make a histogram of character heights
+-   make a scatterplot of height vs weight
+```{r}
+#look at first 6 lines
+head(starwars)
+```
+```{r}
+#find the dimensions of starwars
+dim(starwars)
+```
+```{r}
+#make a histogram of character heights
+height_histogram <- ggplot(data = starwars, aes(x = height)) + geom_histogram()
+height_histogram
+```
+```{r}
+#make a scatterplot of height vs weight
+height_weight_scatterplot <- ggplot(data = starwars, aes(x = height, y = mass, color = "pink")) + 
+  geom_point() + 
+  labs(x = "Height", 
+       y = "Weight", 
+       title = "Height vs Weight") + 
+  theme_light()
+height_weight_scatterplot
+```
+
+
+
+
+
+
+
+
+
