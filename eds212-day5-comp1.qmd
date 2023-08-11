@@ -46,6 +46,22 @@ height_weight_scatterplot <- ggplot(data = starwars, aes(x = height, y = mass, c
 height_weight_scatterplot
 ```
 
+# Calculate summary statistics
+## Use mean() function to find means.
+## Use sd() function to find standard deviations
+```{r}
+mean_height_test <- mean(starwars)
+#this does not work since there are a bunch of categories it can pull from
+mean_height <- mean(starwars$height, na.rm = TRUE)
+#this will show me the mean of the characters heights in starwars
+  #na.rm keeps or removes the non exsisting values. true will remove, false will keep
+mean_height
+```
+## Find and store the standard deviation of character heights
+```{r}
+sd_height <- sd(starwars$height, na.rm = TRUE)
+sd_height
+```
 
 
 
